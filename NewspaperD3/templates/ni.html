@@ -1,0 +1,12 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+<h1>{{ ni.publicationTitle }}</h1>
+<h2>{{ ni.publicationDate|date:'d M Y h:m' }}</h2>
+<h3>{{ ni.publicationText|Censor }}</h3>
+{% endblock content %}
