@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>D1.5_HW {% block title %} {% endblock title %}</title>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'startbootstrap-bare-gh-pages/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">D3.4_Newspaper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/news/">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/page1/">Page1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/page2/">Page2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/page3/">Page3</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages in dropdown form</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/page1/">Page1</a></li>
+                                <li><a class="dropdown-item" href="/page2/">Page2</a></li>
+                                <li><a class="dropdown-item" href="/page3/">Page3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="text-center mt-5">
+                {% block content %}
+                {{ flatpage.content }}
+                {% endblock content %}
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'startbootstrap-bare-gh-pages/js/scripts.js' %}"></script>
+    </body>
+</html>

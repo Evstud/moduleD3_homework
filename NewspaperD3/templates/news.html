@@ -1,0 +1,43 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+Posts
+{% endblock title %}
+
+{% block content %}
+    <h1>All news</h1>
+    <h3>News count: {{ news|length }}</h3>
+    <hr>
+    {% if news %}
+    <table>
+        <tr>
+            <td>
+                Заголовок
+            </td>
+            <td>
+                Дата публикации
+            </td>
+            <td>
+                Превью
+            </td>
+        </tr>
+    {% for ni in news %} 
+        <tr>
+            <td>
+                {{ ni.publicationTitle }}
+            </td>
+            <td>
+                {{ ni.publicationDate|date:'d M Y' }}
+            </td>
+            <td>
+                {{ ni.publicationText|truncatechars:50|Censor }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% else %} <!-- Если товаров нет, то говорим что товаров нет ;) -->
+    <h2>Товаров нет!</h2>
+    {% endif %}
+{% endblock content %}
